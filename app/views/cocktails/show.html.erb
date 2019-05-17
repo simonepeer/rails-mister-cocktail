@@ -1,0 +1,16 @@
+<div class="container mt-3">
+  <p>
+    <%= link_to "Add New Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-info" %>
+  </p>
+  <h3><%= @cocktail.name %></h3>
+
+  <% @cocktail.doses.each do |doses| %>
+  <ul>
+    <li><strong><%= doses.ingredient.name %></strong>: <%= doses.description %></li>
+  </ul>
+  <% end %>
+
+  <p>
+    <%= link_to 'Back', cocktails_path, class: "btn btn-success" %>
+  </p>
+</div>
