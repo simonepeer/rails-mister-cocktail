@@ -1,7 +1,22 @@
+<div class="pos-f-t">
+  <nav class="navbar navbar-dark bg-dark">
+    <p class="navbar-text">
+      <h2 class="text-white">🍹 <%= link_to 'Monsieur Cocktail', cocktails_path %> 🍸</h2>
+    </p>
+  </nav>
+</div>
+
 <div class="container mt-3">
+  <h3>Add new dose to <%= @cocktail.name %></h3>
+
   <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
   <%= f.association :ingredient %>
   <%= f.button :submit, class: 'btn-primary' %>
   <% end %>
+
+  <div>
+    <br />
+    <%= link_to 'Go back', cocktail_path(@cocktail), class: "btn btn-info" %>
+  </div>
 </div>

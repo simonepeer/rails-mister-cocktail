@@ -1,0 +1,13 @@
+<div class="pos-f-t">
+  <nav class="navbar navbar-dark bg-dark">
+    <p class="navbar-text">
+      <h2 class="text-white">🍹 Monsieur Cocktail 🍸</h2>
+    </p>
+  </nav>
+</div>
+
+<div class="container">
+  <h2>Create new cocktail</h2>
+  <%= render 'form', button_label: 'Create!', cocktail: @cocktail %>
+  <%= link_to 'Go back', cocktails_path %>
+</div>

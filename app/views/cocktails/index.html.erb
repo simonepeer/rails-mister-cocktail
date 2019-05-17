@@ -1,28 +1,16 @@
 <div class="pos-f-t">
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark p-4">
-      <h3 class="text-white">🍹 Monsieur Cocktail 🍸</h3>
-    </div>
-  </div>
   <nav class="navbar navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Find a cocktail..." aria-label="Search">
-      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <p class="navbar-text">
+      <h2 class="text-white">🍹 <%= link_to 'Monsieur Cocktail', cocktails_path %> 🍸</h2>
+    </p>
   </nav>
 </div>
 
-<div class="container mt-3">
-  <div align="center">
-    <h1>🍹 Monsieur Cocktail 🍸</h1>
-  </div>
+<div class="container mt-3 pb-3">
   <div class="cards mt-3">
     <% @cocktails.each do |cocktail| %>
     <div class="card-category" style="background-image: url(https://images.unsplash.com/photo-1542849187-5ec6ea5e6a27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
-          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      <%= link_to cocktail.name, cocktail_path(cocktail) %>
     </div>
     <% end %>
   </div>

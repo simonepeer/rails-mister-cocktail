@@ -1,16 +1,27 @@
+<div class="pos-f-t">
+  <nav class="navbar navbar-dark bg-dark">
+    <p class="navbar-text">
+      <h2 class="text-white">🍹 <%= link_to 'Monsieur Cocktail', cocktails_path %> 🍸</h2>
+    </p>
+  </nav>
+</div>
+
 <div class="container mt-3">
-  <p>
-    <%= link_to "Add New Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-info" %>
-  </p>
   <h3><%= @cocktail.name %></h3>
-
-  <% @cocktail.doses.each do |doses| %>
-  <ul>
-    <li><strong><%= doses.ingredient.name %></strong>: <%= doses.description %></li>
-  </ul>
-  <% end %>
-
   <p>
-    <%= link_to 'Back', cocktails_path, class: "btn btn-success" %>
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+  </p>
+  <div class="d-flex flex-column">
+    <% @cocktail.doses.each do |doses| %>
+    <ul>
+      <li>
+        <strong><%= doses.ingredient.name %></strong>: <%= doses.description %>
+        (<%= link_to 'delete', dose_path(doses), method: :delete %>)
+      </li>
+    </ul>
+    <% end %>
+  </div>
+  <p>
+    <%= link_to "Add New Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-info" %> or <%= link_to 'go back', cocktails_path %>
   </p>
 </div>
